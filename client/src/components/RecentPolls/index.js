@@ -14,10 +14,12 @@ import FormLabel from "@material-ui/core/FormLabel";
 import Button from "@material-ui/core/Button";
 import axios from "axios";
 import Chart from "react-google-charts";
-
+import '../index.scss'; 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: "100%",
+    margin: '0 auto',
+    padding: '1em', 
+    textAlign: 'center'
   },
   heading: {
     fontSize: theme.typography.pxToRem(14),
@@ -66,7 +68,7 @@ const PollItem = (props) => {
       key={props.index}
       expanded={expanded === "showPoll"}
       onChange={handleChange("showPoll")}
-      className={classes.open}
+      className={classes.root}
     >
       <AccordionSummary
         expandIcon={<ExpandMoreIcon />}
@@ -77,7 +79,7 @@ const PollItem = (props) => {
       </AccordionSummary>
       <AccordionDetails>
         <form>
-          <FormControl component="fieldset">
+          <FormControl component="fieldset" >
             {/* HARDCODED. NEED TO FIX */}
             <FormLabel component="legend">{}</FormLabel>
             <RadioGroup
@@ -86,13 +88,16 @@ const PollItem = (props) => {
               name={poll.pollTitle}
             >
               <FormControlLabel
+              className='input'
                 value={poll.option1Title}
                 key={poll.option1Title}
                 control={<Radio />}
                 label={poll.option1Title}
                 name={"option1Val"}
+
               />
               <FormControlLabel
+              className='input'
                 value={poll.option2Title}
                 key={poll.option2Title}
                 control={<Radio />}
@@ -100,6 +105,7 @@ const PollItem = (props) => {
                 name={"option2Val"}
               />
               <FormControlLabel
+              className='input'
                 value={poll.option3Title}
                 key={poll.option3Title}
                 control={<Radio />}
@@ -107,6 +113,7 @@ const PollItem = (props) => {
                 name={"option3Val"}
               />
               <FormControlLabel
+              className='input'
                 value={poll.option4Title}
                 key={poll.option4Title}
                 control={<Radio />}
