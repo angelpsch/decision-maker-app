@@ -9,6 +9,8 @@ import "./index.scss";
 import PollIcon from "@material-ui/icons/Poll";
 import AddCircleIcon from "@material-ui/icons/AddCircle";
 import Container from '@material-ui/core/Container';
+import { Link, withRouter } from "react-router-dom";
+
 
 const styles = (theme) => ({
   grid: {
@@ -44,13 +46,13 @@ class Home extends Component {
           <Grid item>
               <Card className={classes.card}>
                 <CardContent align="center">
-                  <a href="/signup">
+                  <Link to="/signup">
                     <FontAwesomeIcon
                       title="Sign Up"
                       icon={['fad', 'plus']}
                       className={classes.icon}
                     />
-                  </a>
+                  </Link>
 
                   <Typography  component="h2">
                     Sign Up
@@ -63,13 +65,13 @@ class Home extends Component {
 
               <Card className={classes.card}>
                 <CardContent >
-                  <a href="/signin">
+                  <Link to="/signin">
                   <FontAwesomeIcon
                       title="Sign Up"
                       icon={['fad', 'sign-in']}
                       className={classes.icon}
                     />
-                  </a>
+                  </Link>
 
                   <Typography  component="h2">
                     Log In
