@@ -18,7 +18,8 @@ import { Paper } from '@material-ui/core';
 const styles = (theme) => ({
   root: {
     margin: "0 auto",
-    color: 'black'
+    color: 'black',
+    width: '70%'
   },
   title: {
     margin: `${theme.spacing(3)}px 0 ${theme.spacing(2)}px`,
@@ -67,7 +68,7 @@ class Profile extends Component {
         <Typography>
           <h1>{auth.isAuthenticated().user.name}'s Profile</h1>
         </Typography>
-        <TableContainer component={Paper} className='profile-root'>
+        <TableContainer component={Paper} className={classes.root}>
           <Table className='profile-root' elevation={4}>
             <TableHead>
               <TableRow>
